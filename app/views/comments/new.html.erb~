@@ -1,0 +1,37 @@
+
+  <div class="section">
+
+       <p><%= @section.name %></p>
+      
+       <p> <%= image_tag @section.image.url(:medium) %> </p>
+      
+
+      <p id="content1"><%= @section.content %></p>
+      
+          
+<div>
+
+             <% @section.comments.each do |c| %>
+              
+               <div>
+                   <%= c.content %>
+                   <p> Commented by : <%= c.name %> on <%= c.timestamps %> </p>
+               
+                </div>
+              <% end %>
+            
+        
+ 
+         </div>
+       
+<div class ="comment-form">
+  
+ <%= error_messages_for(@comment) %>
+
+  <h2> Please write your comment </h2>
+  
+
+    <%= render 'form' %>
+
+  
+</div>

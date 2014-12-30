@@ -1,0 +1,36 @@
+<h1> Create New Subject </h1>
+
+
+<%= form_for(:section, url:{action: :create}) do |f| %>
+  
+ <div class ="field"> 
+   <%= f.label(:name, "Name") %>
+   <%= f.text_field(:name) %>
+  </div>
+ 
+  <div class="field"> 
+   <%= f.label(:position, "Position") %>
+   <%= f.text_field(:position) %>
+  </div>
+
+  <div class ="field" > 
+   <%= f.label(:visible, "Visible") %>
+   <%= f.text_field(:visible) %>
+  </div>
+
+
+  <div class ="field" > 
+   <%= f.label(:content_type, "Content Type") %>
+   <%= f.select(:content_type,["Html","Text"]) %>
+  </div>
+
+  <div class ="field" > 
+   <%= f.label(:content, "Write Content") %>
+   <%= f.text_field(:visible) %>
+  </div>
+
+  <%= f.submit("Create Page") %>
+
+
+
+<% end %>

@@ -1,0 +1,35 @@
+<h1> Welcome to Admin User Page </h1>
+
+<p> Here is the information of current Admin Users <p>
+
+
+ <table>
+
+   <tr> 
+
+     <th>First_name</th>
+     <th>Last_name</th>
+     <th>Username</th>
+     <th>Email</th>
+
+   </tr>
+  
+ <% @admin_users.each do |admin| %>
+   <tr> 
+    
+  
+     <th><%= admin.first_name %></th>
+     <th><%= admin.last_name %></th>
+     <th><%= admin.username %></th>
+     <th> <%= admin.email %></th>
+     <th > 
+		                 <%= link_to("Create",:controller=>"admin_user", :action=>"new", :id=>admin.id) %>
+		                 <%= link_to("Edit",:controller=>"admin_user", :action=>"edit", :id=>admin.id) %>
+		                 <%= link_to("Delete",:controller=>"admin_user", :action=>"delete", :id=>admin.id) %>
+      </th>
+
+   </tr>
+ <% end %>
+
+   <li><%= link_to("<< Back to Admin main Page", :controller=>'access', :action=>"index") %></li>
+ </table>

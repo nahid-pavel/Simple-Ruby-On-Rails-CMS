@@ -1,0 +1,22 @@
+
+<%= form_for(:comment,url:{action: :create, :section_id=>@section.id}) do |f| %>
+ 
+
+  <div class= "field">
+    <%= f.label(:content,"Please write a comment") %><br/>
+    <%= f.text_area(:content, :size => '30x10') %>
+  </div>
+
+  <div class= "field">
+    <%= f.label(:name,"Please write your name") %><br/>
+    <%= f.text(:name) %>
+  </div>
+
+   <div class= "field">
+    <%= submit_tag("Submit") %><br/>
+    
+  </div>
+
+<% end %>
+
+ 

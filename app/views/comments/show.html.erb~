@@ -1,0 +1,36 @@
+
+ <% @page_title = @page.name %>
+
+
+
+<% @page.sections.visible.sorted.each do |section| %>
+  <div class="section">
+
+       <p><%= section.name %></p>
+      
+       <p> <%= image_tag section.image.url(:medium) %> </p>
+      
+
+      <p id="content1"><%= section.content %></p>
+      <p "><%= link_to(pluralize(section.comments.count,"comment")) %></p>
+           <ul>
+
+             <% section.comments.each do |c| %>
+              
+                <li>
+                   <%= c.content %>
+                </li>
+
+              <% end %>
+         </ul>
+
+      <%= render 'form' %>
+       
+       
+       
+  </div>
+<% end %>
+
+
+
+

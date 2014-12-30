@@ -1,0 +1,31 @@
+<h2> Welcome to admin Page</h2>
+
+
+
+
+<div class="login">
+  
+  <%= form_tag(:action=>"attempt_login" ) do %>
+    <table>
+     <p> Please login to enter </p>
+    <tr>
+      <td> <%= label_tag(:username, "Username") %> </td>
+      <td><%= text_field_tag(:username) %> </td>
+    </tr>
+     
+    <tr>
+      <td> <%= label_tag(:password, "Password") %> </td>
+      <td> <%= text_field_tag(:password) %> </td>
+     </tr>
+     
+     <tr>
+       <td><%= submit_tag("Submit") %></td>
+     </tr>
+
+
+  <% end %>
+  </table>
+
+</div>
+
+

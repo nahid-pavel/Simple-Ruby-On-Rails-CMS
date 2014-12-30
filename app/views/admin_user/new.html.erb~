@@ -1,0 +1,38 @@
+<h2> Create a user </h2>
+
+
+<%= error_messages_for(@admin_user) %>
+
+
+<%= form_for(:admin_user, url:{action: :create}) do |f| %>
+  
+ <div class ="field"> 
+   <%= f.label(:first_name, "First Name") %>
+   <%= f.text_field(:first_name) %>
+  </div>
+ 
+  <div class="field"> 
+   <%= f.label(:last_name, "Last Name") %>
+   <%= f.text_field(:last_name) %>
+  </div>
+
+  <div class ="field" > 
+   <%= f.label(:username, "Username") %>
+   <%= f.check_box(:visible) %>
+  </div>
+
+  <div class ="field" > 
+   <%= f.label(:password, "Password") %>
+   <%= f.password_field(:password) %>
+  </div>
+
+  <div class ="field" > 
+   <%= f.label(:password_confirmation, "Password Confirmation") %>
+   <%= f.password_field(:password_confirmation) %>
+  </div>
+
+  <%= f.submit("Create Admin User ") %>
+
+
+
+<% end %>

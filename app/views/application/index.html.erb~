@@ -1,0 +1,58 @@
+
+<div class ="sections index">
+
+<h1>Sections</h1>
+
+  <%= link_to("Add new Section",{action: :new}, class:"action new") %>
+
+<% if @sections.size > 0 %>
+
+  <table class ="listing" summary="Subject list" >
+
+      <tr class ="header">
+
+         <th>&nbsp;</th>
+         <th> Name </th>
+         <th>Visible</th>
+         <th> Content Type</th>
+         <th>Content</th>
+         <th>Action</th>
+  
+
+       </tr>
+          
+         <% @sections.each do |section| %>
+
+
+       <tr>
+
+           <td><%= section.position %></td>
+           <td><%= section.name %></td>
+           <td class="center"><%= section.visible ? 'Yes' : 'No' %></td>
+           <td><%= section.content_type %></td>
+           <td><%= section.content %></td>
+           
+           <td class="actions">
+
+                <%= link_to("Show",{action: :show,id:section.id}, :class=>"action show") %>
+                <%= link_to("Edit",{action: :edit,id:section.id}, :class=>"action edit") %>
+                <%= link_to("Delete",{action: :delete,id:section.id},:class=>"action delete") %>
+
+
+            </td>
+          
+
+       </tr>
+
+       <% end %>
+
+ </table>
+
+<% else %>
+
+   <h2> There is no subject to show </h2>
+
+
+<% end %>
+
+</div>

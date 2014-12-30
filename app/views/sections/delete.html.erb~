@@ -1,0 +1,15 @@
+
+<%= form_for(@section, id: @section.id) do |f| %>
+  
+   <p> Are you sure , you want to delete the page? </p>
+   <p> <%= @section.name %> </p>
+ 
+ 
+<div >
+  <%= f.submit("Yes, Delete Page") %>
+</div>
+
+<h5><%= link_to("<<Back to Home Page", {action: :index}) %> </h3>
+
+
+<% end %>

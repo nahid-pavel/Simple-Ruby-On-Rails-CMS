@@ -1,0 +1,36 @@
+<h1> Update Page</h1>
+
+
+<%= form_for(:section, url:{action: :update, :id=>@section.id}) do |f| %>
+  
+ <div class ="field"> 
+   <%= f.label(:name, "Name") %>
+   <%= f.text_field(:name) %>
+  </div>
+ 
+  <div class="field"> 
+   <%= f.label(:position, "Position") %>
+   <%= f.text_field(:position) %>
+  </div>
+
+  <div class ="field" > 
+   <%= f.label(:visible, "Visible") %>
+   <%= f.text_field(:visible) %>
+  </div>
+
+  <div class ="field" > 
+   <%= f.label(:content_type, "Content-Type") %>
+   <%= f.select(:content_type,["HTML","Text"]) %>
+  </div>
+
+  <div class ="field" > 
+   <%= f.label(:content, "Update Content") %>
+   <%= f.text_field(:content) %>
+  </div>
+
+
+  <%= f.submit("Create Page") %>
+
+
+
+<% end %>

@@ -1,0 +1,44 @@
+
+  <div id="image-index">
+
+       <p><%= @section.name %></p>
+      
+       <p> <%= image_tag @section.image.url(:medium) %> </p>
+      
+
+      <p id="content1"><%= @section.content %></p>
+      
+          
+<div id="image">
+              <h2> <%= pluralize(@section.comments.count,"Comment") %> </h2>
+             <% @section.comments.each do |c| %>
+                
+               <div>
+                   
+                   <%= c.content %>
+                   <div> 
+                     <% if c.name.present? %>
+                     <p id="comment-by">Commented by : <%= c.name %> </p>
+                     <% else %>
+                     <p id ="comment-by">Commented by : Anonymous </p>
+                      <% end %>
+                     
+               
+                </div>
+              <% end %>
+            
+        
+ 
+         </div>
+       
+<div class ="comment-form">
+  
+ 
+
+  <h2> Please write your comment </h2>
+  
+
+    <%= render 'form' %>
+
+  
+</div>

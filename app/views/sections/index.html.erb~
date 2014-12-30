@@ -1,0 +1,69 @@
+
+<div class ="sections index">
+
+<h1>Sections</h1>
+
+  <% if @subject %>
+
+  <%= link_to("Add new Section",{action: :new,:page_id=>@page.id}, class:"action new") %>
+
+  <% else %>
+
+   <%= link_to("Add new Section",{action: :new}, class:"action new") %>
+   <% end %>
+<% if @sections.size > 0 %>
+
+  <table class ="listing" summary="Subject list" >
+
+      <tr class ="header">
+
+         <th>&nbsp;</th>
+         <th> Name </th>
+         <th>Visible</th>
+         <th> Content Type</th>
+         <th>Content</th>
+         <th>Action</th>
+  
+
+       </tr>
+          
+         <% @sections.each do |section| %>
+
+
+       <tr class="<%= cycle('odd', 'even') %>">
+         
+           <td><%= section.position %></td>
+           <td><%= section.name %></td>
+           <td class="center"><%= section.visible ? 'Yes' : 'No' %></td>
+           <td><%= section.content_type %></td>
+           <td><%= section.content %></td>
+           
+           <td class="actions">
+            <%if @subject %>
+                <%= link_to("Show",{action: :show,id:section.id,page_id:@page.id}, :class=>"action show") %>
+                <%= link_to("Edit",{action: :edit,id:section.id,page_id:@page.id}, :class=>"action edit") %>
+                <%= link_to("Destroy",section_path(@section), method: :delete,data: {confirm: "Are you sure?"},:class=>"action delete") %>
+            <%else %>
+
+               <%= link_to("Show",{action: :show,id:section.id}, :class=>"action show") %>
+                <%= link_to("Edit",{action: :edit,id:section.id}, :class=>"action edit") %>
+                <%= link_to("Destroy",section_path(@section),method: :delete,data: {confirm: "Are you sure?"},:class=>"action delete") %>
+            <% end %>
+
+            </td>
+          
+
+       </tr>
+
+       <% end %>
+
+ </table>
+
+<% else %>
+
+   <h2> There is no subject to show </h2>
+
+
+<% end %>
+
+</div>

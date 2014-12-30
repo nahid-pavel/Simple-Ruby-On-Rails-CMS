@@ -1,0 +1,25 @@
+<h1> Update Subject </h1>
+
+
+<%= form_for(:subject, url:{action: :update, :id=>@subject.id}) do |f| %>
+  
+ <div class ="field"> 
+   <%= f.label(:name, "Name") %>
+   <%= f.text_field(:name) %>
+  </div>
+ 
+  <div class="field"> 
+   <%= f.label(:position, "Position") %>
+   <%= f.text_field(:position) %>
+  </div>
+
+  <div class ="field" > 
+   <%= f.label(:visible, "Visible") %>
+   <%= f.text_field(:visible) %>
+  </div>
+
+  <%= f.submit("Create Subject") %>
+
+
+
+<% end %>

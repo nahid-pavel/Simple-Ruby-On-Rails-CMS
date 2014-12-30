@@ -1,0 +1,28 @@
+
+  <% @page_title = @page.name %>
+
+
+
+<% @page.sections.visible.sorted.each do |section| %>
+  <div class="section">
+
+       <h1 id ="image-content"><%= link_to(section.name,{:controller=>"public",:action=>"comments_index",:section_id=>section.id}) %></h1>
+       
+       <% if section.image.present? %>
+       <p id ="image"> <%= image_tag section.image.url(:medium) %> </p>
+       <p id="content1"><%= section.content %></p>
+      <p id= "comment"><%= link_to(pluralize(section.comments.count,"comment"),{:controller=>"public",:action=>"comments_index", :section_id=>section.id}) %></p>
+
+       <% else %>
+     
+
+      <p id="content1"><%= section.content %></p>
+      <p id="comment"><%= link_to(pluralize(section.comments.count,"comment"),{:controller=>"public",:action=>"comments_index", :section_id=>section.id}) %></p>
+
+ <% end %>
+          
+       
+       
+  </div>
+<% end %>
+

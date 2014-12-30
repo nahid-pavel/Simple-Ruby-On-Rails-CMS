@@ -1,0 +1,30 @@
+
+
+
+<h1> Create New Subject </h1>
+
+<%= error_messages_for(@subject) %>
+
+
+<%= form_for(:subject, url:{action: :create}) do |f| %>
+  
+ <div class ="field"> 
+   <%= f.label(:name, "Name") %>
+   <%= f.text_field(:name) %>
+  </div>
+ 
+  <div class="field"> 
+   <%= f.label(:position, "Position") %>
+   <%= f.text_field(:position) %>
+  </div>
+
+  <div class ="field" > 
+   <%= f.label(:visible, "Visible") %>
+   <%= f.check_box(:visible) %>
+  </div>
+
+  <%= f.submit("Create Subject") %>
+
+
+
+<% end %>

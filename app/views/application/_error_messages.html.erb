@@ -1,0 +1,20 @@
+
+<% if object and object.errors.size > 0 %>
+
+ <h2> There <%= object.errors.size==1?"is":"are" %>   <%= pluralize(object.errors.size, "error") %>   </h2>
+
+ <p> The following error is prohibiting to continue</p>
+
+
+<div id="error_explanation">
+	<ul>
+	 <% object.errors.full_messages.each do |msg| %>
+
+	  <li>  <%= msg %> </li>
+
+	 <% end %>
+	</ul>
+
+</div>
+
+<% end%>

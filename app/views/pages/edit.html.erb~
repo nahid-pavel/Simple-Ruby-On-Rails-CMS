@@ -1,0 +1,12 @@
+<h1> Update Page</h1>
+
+
+<%= form_for(@page, id:@page.id}) do |f| %>
+  
+      <%= render(partial:"form",locals:{f:f}) %>
+
+  <%= f.submit("Update Page") %>
+
+
+
+<% end %>

@@ -1,0 +1,41 @@
+class CommentsController < ApplicationController
+
+layout 'public'
+
+def index
+
+   @section = Section.find(params[:section_id])
+   @comment = Comment.new
+
+end
+
+
+
+def create
+   
+
+   @section = Section.find(params[:section_id])
+   @comment = @section.comments.build(comment_params)
+
+   if @comment.save
+
+      render 'index'
+
+   else
+
+      render  'index'
+
+   end
+
+end
+
+private
+
+def comment_params
+  
+   params.require(:comment).permit(:content,:name)
+
+end
+
+
+end

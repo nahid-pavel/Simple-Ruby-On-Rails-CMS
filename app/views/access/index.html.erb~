@@ -1,0 +1,16 @@
+<%= @page_title="Admin Page" %>
+
+<div class ="menu">
+	<h2> Welcome to admin page </h2>
+
+
+    <ul>
+  
+        <li><%= link_to("ADD Content",subjects_path) %></li>
+        
+	<li><%= link_to("Logout",:action=> "logout") %></li>
+        <li><%= link_to("Go to Admin Page", admin_users_path) %></li>
+   </ul>
+
+  
+</div>

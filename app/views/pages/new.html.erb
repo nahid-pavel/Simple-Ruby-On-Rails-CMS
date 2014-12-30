@@ -1,0 +1,33 @@
+<h1> Create New Subject </h1>
+
+<% if @subject %>
+<%= form_for(:page, :url => {:action => 'create', :subject_id => @subject.id}) do |f| %>
+
+<%= render(:partial => "form", :locals => {:f => f}) %>
+
+  
+ 
+  
+  
+
+<%= submit_tag("Create Page") %>
+
+<% end %>
+ 
+
+<% else %>
+
+<%= form_for(:page, :url => {:action => 'create'}) do |f| %>
+
+<%= render(:partial => "form", :locals => {:f => f}) %>
+
+  
+ 
+  
+  
+
+<%= submit_tag("Create Page") %>
+
+<% end %>
+
+<% end %>

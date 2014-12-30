@@ -1,0 +1,20 @@
+
+<% if object & object.errors.size > 0 %>
+
+ <h2> There are <%= object.errors.count %> occurs </h2>
+
+ <p> The following error is prohibiting to continue</p>
+
+
+<div id="error_explanation">
+	<ul>
+	 <% object.error_messages.each do |msg| %>
+
+	  <li>  <%= msg %> </li>
+
+	 <% end %>
+	</ul>
+
+</div>
+
+<% end%>
