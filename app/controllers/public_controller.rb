@@ -8,7 +8,7 @@ before_action :find_subject
   
  def index
 
-   
+   @sections = Section.all
    
    
   

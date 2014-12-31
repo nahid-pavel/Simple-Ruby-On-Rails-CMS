@@ -6,7 +6,7 @@
 <% @page.sections.visible.sorted.each do |section| %>
   <div class="section">
 
-       <h1 id ="image-content"><%= link_to(section.name,{:controller=>"public",:action=>"comments_index",:section_id=>section.id}) %></h1>
+       <h2 id ="image-content"><%= link_to(section.name,{:controller=>"public",:action=>"comments_index",:section_id=>section.id}) %></h2>
        
        <% if section.image.present? %>
        <p id ="image"> <%= image_tag section.image.url(:medium) %> </p>

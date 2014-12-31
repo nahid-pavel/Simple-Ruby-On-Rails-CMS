@@ -39,8 +39,8 @@ p, td, ul, ol, li, dl, dt, dd {
 
 }
 
-#image {text-align :center; border-top:1px dotted #666; }
-#image-index {text-align :center; }
+#image {text-align :center; }
+#image-index {text-align :center; margin-buttom:10px; }
 #image-content {text-align :center; 
   
     a {
@@ -50,6 +50,8 @@ p, td, ul, ol, li, dl, dt, dd {
      }
 
  }
+
+#comment-by{color:red;}
 img { border: none; }
 table { border-collapse: collapse; }
 table tr th, table tr td { vertical-align: top; text-align: left;
