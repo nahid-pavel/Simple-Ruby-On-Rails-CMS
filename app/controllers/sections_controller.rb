@@ -34,7 +34,7 @@ def create
     @section = Section.new(section_params)
     if @section.save
       flash[:notice] = "Section created successfully."
-      redirect_to(:action => 'index', :page_id => @page.id)
+      redirect_to(:action => 'index')
     else
       @pages = @page.subject.pages.sorted
       @section_count = Section.count + 1

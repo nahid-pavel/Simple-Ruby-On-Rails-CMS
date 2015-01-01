@@ -25,7 +25,7 @@ end
 def new
 
    @section = Section.new({ :name => "Default"})
-   @pages = @page.subject.pages.sorted
+   @pages = Page.all
    @section_count = Section.count + 1
    
 end
