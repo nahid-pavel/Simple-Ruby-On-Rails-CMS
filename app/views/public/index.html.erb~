@@ -2,7 +2,7 @@
 	
 
      
-         <% @sections.visible.sorted each do |section| %>
+         <% @sections.visible.sorted.each do |section| %>
            <div class="section">
 
        <h2 id ="image-content"><%= link_to(section.name,{:controller=>"public",:action=>"comments_index",:section_id=>section.id}) %></h2>
