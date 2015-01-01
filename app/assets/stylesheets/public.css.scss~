@@ -39,8 +39,8 @@ p, td, ul, ol, li, dl, dt, dd {
 
 }
 
-#image {text-align :center; }
-#image-index {text-align :center; margin-buttom:10px; }
+#image {text-align :center;}
+#image-index {text-align :center;  }
 #image-content {text-align :center; 
   
     a {
